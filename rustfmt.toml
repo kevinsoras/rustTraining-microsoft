@@ -1,0 +1,29 @@
+# Maximum line width
+max_width = 100
+
+# Number of spaces per tab
+tab_spaces = 4
+
+# Control formatting heuristics (default is "Default")
+use_small_heuristics = "Default"
+# options: "Default", "Off", "Max"
+
+# Width threshold for aligning function call arguments
+fn_call_width = 100
+
+# Whether to allow breaking long strings
+format_strings = true
+
+# Automatically reorder imports
+reorder_imports = true
+
+# Merge imports into a single block
+merge_imports = true
+
+# Brace style for functions and structs
+brace_style = "AlwaysNextLine"
+# options: "AlwaysNextLine", "PreferSameLine"
+
+# Trailing comma style for long lists
+trailing_comma = "Vertical"
+# options: "Vertical", "Never"

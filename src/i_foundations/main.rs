@@ -4,6 +4,7 @@ use crate::i_foundations::data_processor::DataProcessor;
 use crate::i_foundations::hidden_execeptions::HiddenExeceptions;
 use crate::i_foundations::hidden_execeptions::UserError;
 use crate::i_foundations::i_iii_type_system_proof_engine::adts::area;
+use crate::i_foundations::i_iii_type_system_proof_engine::inheritance::Greet;
 use crate::i_foundations::null_references::Profile;
 use crate::i_foundations::null_references::User;
 use crate::i_foundations::null_references::UserService;
@@ -14,6 +15,8 @@ use crate::i_foundations::i_iii_type_system_proof_engine::immutability_default;
 
 use crate::i_foundations::i_iii_type_system_proof_engine::first_class_vs_afterthought::Order;
 use crate::i_foundations::i_iii_type_system_proof_engine::first_class_vs_afterthought::get_high_value_orders;
+use crate::i_foundations::i_iii_type_system_proof_engine::inheritance;
+use crate::i_foundations::i_iii_type_system_proof_engine::performance_without_gc;
 
 pub async fn introduction() {
     // Aproach : Data processing with benchmarking
@@ -29,6 +32,10 @@ pub async fn introduction() {
     immutability_default::main();
     // v
     first_class_vs_afterthought();
+    // vi
+    inheritance();
+    // vii
+    performance_without_gc();
 }
 
 fn data_processing() {
@@ -116,4 +123,23 @@ fn first_class_vs_afterthought() {
     ];
     let high_value_orders = get_high_value_orders(&orders);
     println!("High value orders: {:?}", high_value_orders);
+}
+fn inheritance() {
+    let dog = inheritance::Dog;
+    dog.greet();
+    let robot_dog = inheritance::RobotDog {
+        voice: String::from("Beep Boop!"),
+    };
+    robot_dog.greet();
+}
+fn performance_without_gc() {
+    println!("Running performance without GC... ");
+    let mut trader = performance_without_gc::HighFrequencyTrader {
+        trades: Vec::<performance_without_gc::Trade>::new(),
+    };
+    let tick = performance_without_gc::MarketTick {
+        price: 1200,
+        volume: 100,
+    };
+    trader.process_market_data(tick);
 }

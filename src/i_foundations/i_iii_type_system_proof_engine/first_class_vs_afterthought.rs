@@ -23,6 +23,7 @@ pub struct Order {
 }
 #[derive(Debug)]
 pub struct OrderSummary {
+    // If you want control on banks, you can use a newtype pattern here to enforce invariants
     total: i64, // Cents to avoid floating-point issues
 }
 pub fn get_high_value_orders(orders: &[Order]) -> Vec<OrderSummary> {

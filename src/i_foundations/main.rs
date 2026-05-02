@@ -18,6 +18,7 @@ use crate::i_foundations::i_iii_type_system_proof_engine::first_class_vs_afterth
 use crate::i_foundations::i_iii_type_system_proof_engine::inheritance;
 use crate::i_foundations::i_iii_type_system_proof_engine::performance_without_gc;
 
+#[allow(dead_code)]
 pub async fn introduction() {
     // Aproach : Data processing with benchmarking
     data_processing();

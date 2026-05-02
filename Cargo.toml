@@ -6,3 +6,4 @@ edition = "2024"
 [dependencies]
 tokio = { version = "1", features = ["full"] }
 itertools = "0.14"
+dotenv = "0.15"
